@@ -17,6 +17,7 @@ import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
 import UserAdd from "./views/UserAdd";
+import UserUpdate from "./views/UserUpdate";
 
 export default [
   {
@@ -30,6 +31,11 @@ export default [
     path: "/user-add",
     layout: DefaultLayout,
     component: UserAdd
+  },
+  {
+    path: "/user-update",
+    layout: DefaultLayout,
+    component: UserUpdate
   },
   {
     path: "/blog-overview",
