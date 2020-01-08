@@ -5,7 +5,7 @@ export default function() {
       class: "sidebar-editor",
       to: "/blog-overview",
       htmlBefore: '<i class="material-icons">edit</i>',
-      htmlAfter: ""
+      htmlAfter: ''
     },
     {
       title: "portal da marca",

@@ -11,6 +11,19 @@ class SidebarMainNavbar extends React.Component {
     this.handleToggleSidebar = this.handleToggleSidebar.bind(this);
   }
 
+  componentDidMount() {
+    this.getElement();
+  }
+
+  async getElement() {
+    // const elemento = await document.getElementsByClassName("active");
+    // // elemento.chave.className += ' sumiu'
+    // const elementoPai = elemento.chave.parentElement;
+    // // elementoPai.classList.add('sumiu')
+    // console.log(elementoPai)
+    // return elementoPai;
+  }
+
   handleToggleSidebar() {
     Dispatcher.dispatch({
       actionType: Constants.TOGGLE_SIDEBAR
@@ -50,7 +63,7 @@ class SidebarMainNavbar extends React.Component {
             className="toggle-sidebar d-sm-inline d-md-none d-lg-none"
             onClick={this.handleToggleSidebar}
           >
-            <i className="material-icons">&#xE5C4;</i>
+            <i id="toggle-sidebar" className="material-icons">&#xE5C4;</i>
           </a>
         </Navbar>
       </div>

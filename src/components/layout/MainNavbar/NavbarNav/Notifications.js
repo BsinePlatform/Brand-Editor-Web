@@ -1,5 +1,6 @@
 import React from "react";
 import { NavItem, NavLink, Badge, Collapse, DropdownItem } from "shards-react";
+import Icon from '@material-ui/core/Icon';
 
 export default class Notifications extends React.Component {
   constructor(props) {
@@ -26,8 +27,8 @@ export default class Notifications extends React.Component {
           onClick={this.toggleNotifications}
         >
           <div className="nav-link-icon__wrapper">
-            <i className="material-icons">&#xE7F4;</i>
-            <Badge pill theme="danger">
+            <Icon className="far fa-bell"/> <span className="notify">Mensagens</span>
+            <Badge id="notify-badge" theme="danger">
               2
             </Badge>
           </div>

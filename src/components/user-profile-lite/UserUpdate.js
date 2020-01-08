@@ -56,9 +56,9 @@ class UserAccountDetails extends Component {
   }
 
   async getUser() {
-    const teste = await api.get("/users/1/");
+    const teste = await api.get("/users/1");
     this.setState({ user: teste.data });
-    // console.log(teste.data);
+    console.log(teste.data);
   }
 
   // state = {

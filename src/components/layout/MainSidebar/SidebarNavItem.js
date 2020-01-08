@@ -5,7 +5,7 @@ import { NavItem, NavLink } from "shards-react";
 
 const SidebarNavItem = ({ item }) => (
   <NavItem className={item.class}>
-    <NavLink tag={RouteNavLink} to={item.to}>
+    <NavLink id="chave" tag={RouteNavLink} to={item.to}>
       {item.htmlBefore && (
         <div
           className="d-inline-block item-icon-wrapper"
@@ -23,8 +23,21 @@ const SidebarNavItem = ({ item }) => (
         />
       )}
     </NavLink>
+      {
+        item.class == 'sidebar-gerenciamento' &&
+          <div class="teste">
+            <ul>
+              <a href="#"><li>Usuários</li></a>
+              <a href="#"><li>Adicionar Usuário</li></a>
+              <a href="#"><li>Link 3</li></a>
+              <a href="#"><li>Link 4</li></a>
+            </ul>  
+          </div>
+      }
   </NavItem>
 );
+
+
 
 SidebarNavItem.propTypes = {
   /**
