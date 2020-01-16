@@ -24,8 +24,6 @@ import FormControl from '@material-ui/core/FormControl';
 import api from "../../services/api";
 
 
-
-
 class UserAccountDetails extends Component {
 
   state = {
@@ -56,6 +54,7 @@ class UserAccountDetails extends Component {
 
   render() {
     return (
+
   <Card small className="mb-4">
     <CardHeader className="border-bottom">
       <h6 className="m-0">Preencha o Formulário </h6>
@@ -327,7 +326,7 @@ class UserAccountDetails extends Component {
                 </Col>
               </Row>
               
-              <Button theme="accent">Adicionar</Button>
+              <Button theme="accent">Cadastrar</Button>
             </Form>
           </Col>
         </Row>

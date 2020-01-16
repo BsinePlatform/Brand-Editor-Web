@@ -18,6 +18,7 @@ import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
 import UserAdd from "./views/UserAdd";
 import UserUpdate from "./views/UserUpdate";
+import UserList from "./views/UserList";
 
 export default [
   {
@@ -26,6 +27,11 @@ export default [
     layout: SignIn,
     // component: () => <Redirect to="SignIn" />
     component: SignIn
+  },
+  {
+    path: "/user",
+    layout: DefaultLayout,
+    component: UserList
   },
   {
     path: "/user-add",

@@ -30,7 +30,7 @@ class UserAccountDetails extends Component {
     super(props);
     // const response = api.get("/users/1/");
     //   const body = response.json();
-    // console.log(this.state.userData);
+    console.log(this.props);
   }
   
   // state = {

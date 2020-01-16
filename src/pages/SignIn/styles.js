@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Main = styled.div`
   align-items: center;
   justify-content: center;
-  background-color: #353b48;
+  // background-color: #353b48;
 `;
 
 export const Login = styled.div`

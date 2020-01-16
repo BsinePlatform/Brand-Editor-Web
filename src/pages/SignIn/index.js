@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 
 import Logo from "../../assets/download.png";
-import BgImage from "../../assets/bg-login.png";
+// import BgImage from "../../assets/bg-login.png";
 import api from "../../services/api";
 import { login } from "../../services/auth";
 
@@ -13,7 +13,7 @@ import { Container, Form, Row, Col, Button } from "react-bootstrap"
 var sectionStyle = {
   width: "100%",
   height: "100%",
-  backgroundImage: `url(${BgImage})`
+  // backgroundImage: `url(${BgImage})`
 };
 
 class SignIn extends Component {
