@@ -47,7 +47,7 @@ export default function() {
       title: "gerenciamento",
       class: "sidebar-gerenciamento",
       htmlBefore: '<i class="material-icons">person</i>',
-      to: "/user-add",
+      to: "/user",
     },
     {
       title: "configuração",

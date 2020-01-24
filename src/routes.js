@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect, useParams, Link, Router } from "react-router-dom";
 import SignUp from "./pages/SignUp/index";
 import SignIn from "./pages/SignIn/index";
 
@@ -16,9 +16,14 @@ import Errors from "./views/Errors";
 import ComponentsOverview from "./views/ComponentsOverview";
 import Tables from "./views/Tables";
 import BlogPosts from "./views/BlogPosts";
+// User
 import UserAdd from "./views/UserAdd";
 import UserUpdate from "./views/UserUpdate";
 import UserList from "./views/UserList";
+// Route
+import StoreAdd from "./views/store/StoreAdd";
+import StoreUpdate from "./views/store/StoreUpdate";
+import StoreList from "./views/store/StoreList";
 
 export default [
   {
@@ -28,21 +33,62 @@ export default [
     // component: () => <Redirect to="SignIn" />
     component: SignIn
   },
+  // User Routes
   {
+    // List Users
     path: "/user",
     layout: DefaultLayout,
     component: UserList
   },
   {
+    // User Details
+    path: "/user/:id",
+    layout: DefaultLayout,
+    component: UserList
+  },
+  {
+    // Add User
     path: "/user-add",
     layout: DefaultLayout,
     component: UserAdd
   },
+  // <Router><Route path='user-update/:id' layout={<DefaultLayout />} component={<UserUpdate />} ></Route></Router>,
   {
-    path: "/user-update",
+    // Edit User
+    path: "/user-update/:id",
     layout: DefaultLayout,
     component: UserUpdate
   },
+  {
+    // Delete Users
+    path: "/user-delete/:id",
+    layout: DefaultLayout,
+    component: UserUpdate
+  },
+
+  // Store Routes
+  {
+    path: "/store",
+    layout: DefaultLayout,
+    component: StoreList
+  },
+  {
+    path: "/store-add",
+    layout: DefaultLayout,
+    component: StoreAdd
+  },
+  {
+    path: "/store-update/:id",
+    layout: DefaultLayout,
+    component: StoreUpdate
+  },
+  {
+    path: "/store-delete/:id",
+    layout: DefaultLayout,
+    component: StoreUpdate
+  },
+
+  // General Routes
   {
     path: "/blog-overview",
     layout: DefaultLayout,
@@ -107,4 +153,3 @@ export default [
 // );
 
 // export default Routes;
-

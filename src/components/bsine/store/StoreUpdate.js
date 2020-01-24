@@ -21,10 +21,10 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 
-import api from "../../services/api";
+import api from "../../../services/api";
 
 
-class UserAccountDetails extends Component {
+class StoreUpdate extends Component {
 
   // constructor(props) {
   //   super(props);
@@ -373,15 +373,15 @@ class UserAccountDetails extends Component {
   </Card>
 )}}
 
-// UserAccountDetails.propTypes = {
+// StoreUpdate.propTypes = {
 //   /**
 //    * The component's title.
 //    */
 //   title: PropTypes.string
 // };
 
-// UserAccountDetails.defaultProps = {
+// StoreUpdate.defaultProps = {
 //   title: "Account Details"
 // };
 
-export default UserAccountDetails;
+export default StoreUpdate;

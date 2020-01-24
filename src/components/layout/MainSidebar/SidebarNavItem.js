@@ -23,7 +23,7 @@ const SidebarNavItem = ({ item }) => (
         />
       )}
     </NavLink>
-      {
+      {/* {
         item.class == 'sidebar-gerenciamento' &&
           <div class="teste">
             <ul>
@@ -33,7 +33,8 @@ const SidebarNavItem = ({ item }) => (
               <a href="#"><li>Link 4</li></a>
             </ul>  
           </div>
-      }
+      } */}
+      
   </NavItem>
 );
 

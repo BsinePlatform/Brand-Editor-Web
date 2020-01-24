@@ -8,6 +8,9 @@ import withTracker from "./withTracker";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./shards-dashboard/styles/shards-dashboards.1.1.0.min.css";
 
+// TENTAR MÉTODO DO VÍDEO ABAIXO
+// https://tylermcginnis.com/react-router-pass-props-to-components/
+
 export default () => (
   <Router basename={process.env.REACT_APP_BASENAME || ""}>
     <div>

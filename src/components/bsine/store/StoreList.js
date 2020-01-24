@@ -11,18 +11,18 @@ import {
 } from "shards-react";
 
 import { NavLink as RouteNavLink } from "react-router-dom";
-import api from "../../services/api";
+import api from "../../../services/api";
 import { confirmAlert } from 'react-confirm-alert'; // Import
-import '../../styles/bsine-confirm-form.css' // Import css
+import '../../../styles/bsine-confirm-form.css' // Import css
 
-class UserList extends Component {
+class StoreList extends Component {
   
   constructor(props) {
     super(props);
   }
 
   state = {
-    users: []
+    stores: []
   };
   
   async componentDidMount() {
@@ -30,23 +30,22 @@ class UserList extends Component {
   }
 
   async getUser() {
-    const response = await api.get("/users");
-    this.setState({ users: response.data });
+    const response = await api.get("/stores");
+    this.setState({ stores: response.data });
   }
 
-  deleteConfirm = (nm_full_name) => {
-    console.log(nm_full_name)
+  deleteConfirm = (nm_fantasy_name) => {
     confirmAlert({
-      title: 'Excluir "' + nm_full_name + '"?',
-      message: 'Tem certeza que deseja excluir o usuário?',
+      title: 'Excluir "' + nm_fantasy_name + '"?',
+      message: 'Tem certeza que deseja excluir a loja?',
       buttons: [
         {
           label: 'Sim',
-          onClick: () => alert('Usuário excluído.')
+          onClick: () => alert('Loja excluída.')
         },
         {
           label: 'Não',
-          onClick: () => alert('Usuário não excluído.')
+          onClick: () => alert('Loja não excluída.')
         }
       ]
     })
@@ -63,7 +62,7 @@ class UserList extends Component {
 
       <Row className="btn-add-user">
         <Col>
-          <Button theme="accent" tag={RouteNavLink} to="/user-add">Adicionar Usuário</Button>
+          <Button theme="accent" tag={RouteNavLink} to="/store-add">Adicionar Loja</Button>
         </Col>
       </Row>
       {/* Default Light Table */}
@@ -81,16 +80,19 @@ class UserList extends Component {
                       #
                     </th>
                     <th scope="col" className="border-0">
-                      Nome
+                      Sigla
                     </th>
                     <th scope="col" className="border-0">
-                      Email
+                      Nome Fantasia
                     </th>
                     <th scope="col" className="border-0">
-                      Cargo
+                      Cidade
                     </th>
                     <th scope="col" className="border-0">
-                      Telefone
+                      Responsável
+                    </th>
+                    <th scope="col" className="border-0">
+                      Telefone Responsável
                     </th>
                     <th scope="col" className="border-0">
                       Matriz
@@ -101,28 +103,29 @@ class UserList extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {/* {this.state.users.map(({id, nm_full_name, nm_email, nr_document}) => (
+                  {/* {this.state.stores.map(({id, nm_full_name, nm_email, nr_document}) => (
                     <li key={id}>
                       First Name: {nm_full_name} Last Name: {nm_email} avatar: {nr_document}
                     </li>))
                   } */}
-                  { this.state.users.map(({id, nm_full_name, nm_email, nm_position, nr_ddi_phone_commercial, nr_ddd_phone_commercial, nr_phone_commercial, id_company}) => (
+                  { this.state.stores.map(({id, nm_corporate_name, nm_fantasy_name, nr_cnpj, nr_inscricao_estadual, nm_initials, nm_responsible, nm_responsible_email, nr_responsible_ddi, nr_responsible_ddd, nr_responsible_phone, nr_responsible_phone_extension, nm_country, nm_state, nm_city, nm_site, path_img_profile, id_company, id_store_customization, id_user_creator, active}) => (
                     <tr key={id}>
                       <td>{id}</td>
-                      <td>{nm_full_name}</td>
-                      <td>{nm_email}</td>
-                      <td>{nm_position}</td>
-                      <td>+{nr_ddi_phone_commercial} {nr_ddd_phone_commercial} {nr_phone_commercial}</td>
+                      <td>{nm_initials}</td>
+                      <td>{nm_fantasy_name}</td>
+                      <td>{nm_city}</td>
+                      <td>{nm_responsible}</td>
+                      <td>+{nr_responsible_ddi} {nr_responsible_ddd} {nr_responsible_phone}</td>
                       <td>{id_company}</td>
                       <td className="tb-actions">
                         <button onClick=''>
                           <i className="material-icons visibility">visibility</i>
                         </button>
                         <button onClick=''>
-                        <UserEdit id={id}></UserEdit>
+                        <StoreEdit id={id}></StoreEdit>
                         </button>
-                        {/* <UserDelete id={id}></UserDelete> */}
-                        <button value={nm_full_name} onClick={() => this.deleteConfirm(nm_full_name)}>
+                        {/* <StoreDelete id={id}></StoreDelete> */}
+                        <button value={nm_fantasy_name} onClick={() => this.deleteConfirm(nm_fantasy_name)}>
                           <i className="material-icons delete">delete</i>
                         </button>
                       </td>
@@ -137,29 +140,29 @@ class UserList extends Component {
     </Container>
 )}}
 
-const UserDelete = ({ id }) => (
-  // <a href={'user-update/'+id} ">
+const StoreDelete = ({ id }) => (
+  // <a href={'store-update/'+id} ">
   <button onClick={this.deleteConfirm}>
     <i className="material-icons delete">delete</i>
   </button>
   // </a>
 );
 
-const UserEdit = ({ id }) => (
-  <a href={'user-update/'+id}>
+const StoreEdit = ({ id }) => (
+  <a href={'store-update/'+id}>
     <i className="material-icons edit">edit</i>
   </a>
 );
 
-UserList.propTypes = {
+StoreList.propTypes = {
   /**
    * The component's title.
    */
   title: PropTypes.string
 };
 
-UserList.defaultProps = {
-  title: "Users"
+StoreList.defaultProps = {
+  title: "Lojas"
 };
 
-export default UserList;
+export default StoreList;
